@@ -26,7 +26,7 @@ const RABBITMQ_URL = process.env.RABBITMQ_URL;
 
 export async function userEvents() {
   try {
-    const connection = await amqp.connect({process.env.RABBITMQ_URL});
+    const connection = await amqp.connect({RABBITMQ_URL});
     const channel = await connection.createChannel();
 
     const exchange = "user_event";
