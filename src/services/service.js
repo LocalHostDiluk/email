@@ -24,11 +24,11 @@ transporter.use('compile', hbs(hbsOptions));
 export async function userEvents() {
   try {
     const connection = await amqp.connect({
-      protocol: "amqps",
+      protocol: "amqp",
       hostname: process.env.RABBITMQ_HOST,
-      port: 5671,
+      port: 5672,
       username: process.env.RABBITMQ_USER,
-      password: process.env.RABBITMQ_PASS,
+      password: process.env.RABBITMQ_PASS
       vhost: process.env.RABBITMQ_USER,
     });
     const channel = await connection.createChannel();
