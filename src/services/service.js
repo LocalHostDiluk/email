@@ -29,7 +29,7 @@ export async function userEvents() {
     const connection = await amqp.connect({
       protocol: "amqps",
       hostname: process.env.RABBITMQ_HOST,
-      port: 5672,
+      port: 5671,
       username: process.env.RABBITMQ_USER,
       password: process.env.RABBITMQ_PASS
     });
