@@ -28,7 +28,7 @@ export async function userEvents() {
       hostname: process.env.RABBITMQ_HOST,
       port: 5672,
       username: process.env.RABBITMQ_USER,
-      password: process.env.RABBITMQ_PASS
+      password: process.env.RABBITMQ_PASS,
       vhost: process.env.RABBITMQ_USER,
     });
     const channel = await connection.createChannel();
