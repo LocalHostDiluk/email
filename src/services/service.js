@@ -26,13 +26,7 @@ const RABBITMQ_URL = process.env.RABBITMQ_URL;
 
 export async function userEvents() {
   try {
-    const connection = await amqp.connect({
-      protocol: "amqps",
-      hostname: process.env.RABBITMQ_HOST,
-      port: 5671,
-      username: process.env.RABBITMQ_USER,
-      password: process.env.RABBITMQ_PASS
-    });
+    const connection = await amqp.connect({process.env.RABBITMQ_URL});
     const channel = await connection.createChannel();
 
     const exchange = "user_event";
