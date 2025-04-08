@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Correo de Bienvenida</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f3f3f3, #e3e3e3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+      }
+
+      .container {
+        background-color: #fff;
+        border: 1px solid black;
+        width: 90%;
+        max-width: 600px;
+        padding: 40px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #00c4ff;
+        font-size: 2.2em;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hola, {{nombre}}!</h1>
+      <p>{{mensaje}}</p>
+      <p class="password">Tu contraseña generica es: <strong>{{password}}</strong></p>
+    </div>
+  </body>
+</html>
