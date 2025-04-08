@@ -71,6 +71,39 @@ export async function userEvents() {
       { noAck: false }
     );
 
+    // =================================
+    // 2. Evento: user.recover (password)
+    // =================================
+    const recoverQueue = 'user_recover_queue';
+    const recoverRoutingKey = 'user.recover';
+
+    await channel.assertQueue(recoverQueue, { durable: true });
+    await channel.bindQueue(recoverQueue, exchange, recoverRoutingKey);
+
+    channel.consume(recoverQueue, async (msg) => {
+      if (msg !== null) {
+        const data = JSON.parse(msg.content.toString());
+        console.log("Mensaje de recuperación recibido:", data);
+
+        try {
+          await transporter.sendMail({
+            from: process.env.EMAIL,
+            to: data.email,
+            subject: data.subject || "Recuperación de contraseña",
+            template: "recovery",
+            context: {
+              email: data.email
+            },
+          });
+          console.log(`Correo de recuperación enviado a ${data.email}`);
+        } catch (error) {
+          console.error("Error al enviar correo de recuperación:", error);
+        }
+
+        channel.ack(msg);
+      }
+    }, { noAck: false });
+    
     connection.on("close", () => {
       console.error("Conexión cerrada, reconectando en 5s...");
       setTimeout(userEvents, 5000);
