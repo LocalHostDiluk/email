@@ -1,60 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .cuerpo{
-            background-color: #0b1522;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        div {
-            background-color: #0b1522;
-            padding: 10px;
-            margin: 10px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b1522;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .logo{
-            background-color: #0b1522;
-            color: white;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            font-size: 24px;
-        }
+    .cuerpo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
 
-        h1 {
-            color: #f20044;
-        }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        p {
-            color: #fff;
-        }
+    .logo img {
+      height: 100px;
+      width: 100px;
+    }
 
-        img{
-            height: 100px;
-            width: 100px;
+    .logo h1 {
+      color: #00c4ff;
+      font-size: 1.8em;
+      margin: 10px 0 0 0;
+    }
 
-        }
-    </style>
+    .cont {
+      background-color: #121e2d;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 600px;
+    }
 
-    {{{ styles }}}
+    h1 {
+      color: #f20044;
+    }
+
+    p {
+      color: #e0e0e0;
+    }
+  </style>
+
+  {{{ styles }}}
 </head>
 <body>
-
-    <div class="cuerpo">
-        <div class="logo">
-        <img src="https://i.gifer.com/origin/68/68f634fe39f11f411252fc272f6b5dae_w200.gif" alt="Enjambre" width="100">
-        </div>
-
-        <div class="cont">
-            {{{ body }}}
-        </div>
+  <div class="cuerpo">
+    <div class="logo">
+      <img src="https://i.gifer.com/origin/68/68f634fe39f11f411252fc272f6b5dae_w200.gif" alt="Enjambre" />
+      <h1>Bienvenido</h1>
     </div>
+
+    <div class="cont">
+      {{{ body }}}
+    </div>
+  </div>
 </body>
 </html>
